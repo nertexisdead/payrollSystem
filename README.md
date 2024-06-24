@@ -4,6 +4,8 @@ cp .env.example .env
 
 Настройте .env в соответствии с вашей системой (установите ключи DB_). Создайте базу данных на основе установленных ключей.
 
+php artisan serve
+
 php artisan migrate 
 
 php artisan test

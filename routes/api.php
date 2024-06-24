@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\PayrollController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/employees', [PayrollController::class, 'createEmployee']);
+Route::post('/transactions', [PayrollController::class, 'addTransaction']);
+Route::get('/salaries', [PayrollController::class, 'getSalaries']);
+Route::get('/payout', [PayrollController::class, 'payoutSalaries']);
